@@ -29,8 +29,14 @@ public class Customer {
 		/**
 		 * TODO 3		10 Marks
 		 * Provide suitable specification for statement method 
+		 * 
+		 */
+		/* this method calculates the  rent for movies
+		 * add frequent renter points
+		 * calculate amount for each movie
 		 */
 		public String statement() {
+			
 		double totalAmount = 0;
 		int frequentRenterPoints = 0;
 		Enumeration<Rental> rentals = _rentals.elements();
