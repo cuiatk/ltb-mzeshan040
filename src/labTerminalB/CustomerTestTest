@@ -6,31 +6,42 @@ import org.junit.Test;
 
 public class CustomerTestTest {
 
-	@Test
-	public void test() {
-		final Movie Spancer=new Movie( "the Spencer",Movie.CHILDREN);
-		final Movie Speed=new Movie("the Speed",Movie.NEW_RELEASE);
-	    final Movie Diamond=new Movie(" blood MAN",Movie.NEW_RELEASE);
+	
+		Movie m1 = new Movie("Spancer", 0);
+		Movie m2 = new Movie("Speed", 1);
+		Customer me = new Customer("Nadir");
+		Customer me2 = new Customer("Allah Ditta");
+		Rental r1 = new Rental(m1, 23);
+		Rental r2 = new Rental(m2,4);
 		
-		final Customer customer=new Customer("zee");
 		
+		/**
+		 * Test 1 Customer rented two movies one REGULAR and one NEW_RELEASE
+		 */
 		@Test
-		public void basicChildrenRental(){
-			customer.addRental(new Rental(Spancer,2));	
-			assertThat(customer.statement(),is(expectedMessageFor("the Spancer",1.2,1.5,1)));
-			
-			public void shouldDiscountRegularRental(){
-				customer.addRental(new Rentsl(the speed,4));
-				assertThat(customer.statement(),is(expectedMessageFor("the speed",5.0,5.0,1)));
-				
+		public void testStatement1() {
+			me.addRental(r1);
+			me.addRental(r2);
+			//fail("Not yet implemented");
+			String output1 = "Rental Record for Nadir\r\n" + 
+					"	Spancer	33.5\r\n" + 
+					"	Speed	12.0";
+			if(output1.equals(me.statement()))
+			{
+				assert true;
 			}
-			
 		}
-	}
-
-	private void basicChildrenRental() {
-		// TODO Auto-generated method stub
+		public void test() {
+			 Customer calc=new Customer(null);
+			String name=me.getName();
+			assert name.equals("nadir");
+		}
 		
-	}
+		/*
+		 * TODO 2			10 Marks
+		 * Provide at least two more test cases carefully chosen so that they satisfy our testing
+		 * strategy basics i.e. input partition etc
+		 */
+		
 
-}
+	}
